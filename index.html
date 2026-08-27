@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TechStore AI Support</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="chat-container">
+
+        <div class="chat-header">
+
+            <div>
+                <h1>TechStore AI</h1>
+
+                <p>
+                    Customer Support Assistant
+                </p>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                Online
+            </div>
+
+        </div>
+
+
+        <div
+            class="chat-messages"
+            id="chatMessages"
+        >
+
+            <div class="message bot-message">
+
+                <div class="message-label">
+                    TechStore AI
+                </div>
+
+                <div class="message-content">
+                    Hello! How can I help you today?
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="suggestions">
+
+            <button
+                class="suggestion"
+                onclick="sendSuggestion(
+                    'What is your return policy?'
+                )"
+            >
+                Return Policy
+            </button>
+
+            <button
+                class="suggestion"
+                onclick="sendSuggestion(
+                    'What is the status of order O0001?'
+                )"
+            >
+                Order Status
+            </button>
+
+            <button
+                class="suggestion"
+                onclick="sendSuggestion(
+                    'Recommend a laptop under $700'
+                )"
+            >
+                Laptop Recommendation
+            </button>
+
+            <button
+                class="suggestion"
+                onclick="sendSuggestion(
+                    'I need wireless earbuds under $100'
+                )"
+            >
+                Product Recommendation
+            </button>
+
+        </div>
+
+
+        <div class="chat-input-container">
+
+            <input
+                type="text"
+                id="messageInput"
+                placeholder="Ask about products, orders, shipping..."
+                autocomplete="off"
+            >
+
+            <button
+                id="sendButton"
+                onclick="sendMessage()"
+            >
+                Send
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script
+        src="{{ url_for('static', path='/script.js') }}"
+    ></script>
+
+</body>
+
+</html>
